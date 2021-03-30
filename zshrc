@@ -1,24 +1,24 @@
-#
 # .zshrc is sourced in interactive shells.
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
 #
+#
+##############################################################
+##############################################################
+################ BEGIN OF EMBELLISHMENT ######################
+##############################################################
+##############################################################
+#
 # sourcing configuration file for git prompt
+# this imports the repo zsh-git-prompt initialized
+# by the script init.zh in configzsh
 source ~/Dropbox/Software/zsh-git-prompt/zshrc.sh
 
-# this is for autojump
-#[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
+# I just don't use this as much...
 # defining JAVA_HOME
 export JAVA_HOME="/usr/libexec/java_home:$JAVA_HOME"
 
-# adding ssh profile for git
-#ssh-add ~/.ssh/portos_sierra
-#ssh-add ~/.ssh/violeta_bitbucket
-#ssh-add ~/.ssh/rancor
-
-#GIT_PROMPT_EXECUTABLE="haskell"
-
+# this prints the current date at zsh launch
 date
 
 # loading autocompletion
@@ -28,21 +28,37 @@ compinit
 # allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
 
-# never ever beep ever
+# never ever beep ever because I hate this!
 setopt NO_BEEP
 
 # automatically decide when to page a list of completions
 LISTMAX=10
 
+# I am not sure I want this since typically I replace
+# the BSD with GNU so it should load colors by default
+# I leave this here for future reference as it helps avoiding
+# stupid aliases like alias ls='ls -G'
 # load colors
-autoload -U colors
-colors
+# autoload -U colors
+# colors
 
-# edited peppo prompt
-#PROMPT='%B[%n@%m]%b %~ $(git_super_status)> '
+# This redefines the standard default zsh prompt to resemble 
+# the one I had when I was a young astrophysicist
 PROMPT='%B[%n@%m]%b %1d $(git_super_status)> '
 
-# defining path
+
+##############################################################
+##############################################################
+################# END OF EMBELLISHMENT #######################
+##############################################################
+##############################################################
+
+##############################################################
+##############################################################
+################ DEFINE THE PATHS YOU NEED ###################
+##############################################################
+##############################################################
+
 
 #export PATH=/usr/local/Cellar/python@3.8/3.8.3/bin:/usr/local/bin:/usr/bin:/bin
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin/:/usr/sbin/:/sbin:$PATH"
@@ -90,8 +106,18 @@ export CPP=/usr/local/bin/g++-10
 
 #export PATH
 # exporting GOOGLE API credentials
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/franz2/Dropbox/Bocconi/fashion_project/Google_API/codes/instavision-e17bc30e9002.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/franz2/Dropbox/Bocconi/fashion_project/Google_API/codes/instavision-e17bc30e9002.json"
 
+
+
+##############################################################
+################## END OF PATH DEFINITIONS ###################
+##############################################################
+
+##############################################################
+##############################################################
+################# DEFINE HANDY FUNCTIONS #####################
+##############################################################
 
 #alias comandi
 function cerca() {
@@ -102,9 +128,12 @@ function cerca() {
     done
 }
 
-#function edit {nedit $1 &}
-#alias ls='ls --color=auto'
-alias ls='/bin/ls -G'
+##############################################################
+##############################################################
+################# DEFINE HANDY FUNCTIONS #####################
+##############################################################
+
+# commands aliases
 alias lls='ls -lhS'
 alias ll='ls -lh'
 alias llrt='ls -lhrt'
@@ -129,25 +158,24 @@ alias x-='chmod o-x'
 alias stampa='lpr -o sides=two-sided-long-edge -P _10_48_136_10'
 alias stampanti='lpstat -p -d'
 
-#alias percorsi
+# path aliases
 alias cellar='cd /usr/local/Cellar'
-alias datihf='cd ~/Documents/Politecnico/Scompenso/dati/'
 alias sw='cd ~/Dropbox/Software'
-alias poli='cd ~/Dropbox/Politecnico'
 alias movie='cd ~/Movies'
 alias music='cd ~/Music'
 alias drive='cd ~/GoogleDrive'
 alias dropbox='cd ~/Dropbox'
 alias onedrive='cd ~/OneDrive\ -\ Università\ Commerciale\ Luigi\ Bocconi'
 alias bocconi='cd ~/Dropbox/Bocconi'
+alias papers='cd ~/Dropox/Bocconi/Papers'
 
-# alias applications
+# applications aliases
 alias pycharm='open /Applications/PyCharm\ CE.app'
 #alias notebook='jupyter notebook'
 alias notebook='python3 -m notebook'
 alias skim='open /Applications/Skim.app'
 
-# ssh franz
+# SSH aliases
 alias parker='ssh -CY franz@parker.mib.infn.it'
 alias violeta='ssh -CY franz@192.168.0.4'
 alias tosca='ssh -CY grossetti@10.48.136.25'
@@ -162,6 +190,13 @@ alias dsba='ssh -CY grossetti@dsba.sm.unibocconi.it'
 alias gucci1='ssh -CY grossetti@guccilab01.sm.unibocconi.it'
 alias gucci2='ssh -CY grossetti@guccilab02.sm.unibocconi.it'
 alias accserver='ssh -CY franz@10.1.101.83'
+
+
+
+##############################################################
+##############################################################
+###################### MISCELLANEA  ##########################
+##############################################################
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/franz2/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/franz2/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -186,4 +221,6 @@ unset __conda_setup
 
 #alias python=/usr/bin/python3
 #alias pip=/usr/local/bin/pip3
-#a test comment
+#
+#
+# END OF FILE
