@@ -1,0 +1,3 @@
+This is a very simple repo to gather that boring set of instructions to automatically define a nice `zsh` and `vim` environment.
+
+There is nothing fancy...just launch the initialization script with `./init.sh`...
