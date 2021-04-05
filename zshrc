@@ -39,8 +39,8 @@ LISTMAX=10
 # I leave this here for future reference as it helps avoiding
 # stupid aliases like alias ls='ls -G'
 # load colors
-autoload -U colors
-colors
+#autoload -U colors
+#colors
 
 # This redefines the standard default zsh prompt to resemble 
 # the one I had when I was a young astrophysicist
