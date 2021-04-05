@@ -39,13 +39,12 @@ LISTMAX=10
 # I leave this here for future reference as it helps avoiding
 # stupid aliases like alias ls='ls -G'
 # load colors
-# autoload -U colors
-# colors
+autoload -U colors
+colors
 
 # This redefines the standard default zsh prompt to resemble 
 # the one I had when I was a young astrophysicist
 PROMPT='%B[%n@%m]%b %1d $(git_super_status)> '
-
 
 ##############################################################
 ##############################################################
@@ -134,6 +133,7 @@ function cerca() {
 ##############################################################
 
 # commands aliases
+alias ls='ls --color=auto'
 alias lls='ls -lhS'
 alias ll='ls -lh'
 alias llrt='ls -lhrt'
@@ -157,6 +157,7 @@ alias x+='chmod o+x'
 alias x-='chmod o-x'
 alias stampa='lpr -o sides=two-sided-long-edge -P _10_48_136_10'
 alias stampanti='lpstat -p -d'
+alias zshconfig='vim ~/.zshrc'
 
 # path aliases
 alias cellar='cd /usr/local/Cellar'
