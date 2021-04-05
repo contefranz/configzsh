@@ -14,12 +14,8 @@
 # by the script init.zh in configzsh
 source ~/Dropbox/Software/zsh-git-prompt/zshrc.sh
 
-# I just don't use this as much...
-# defining JAVA_HOME
-export JAVA_HOME="/usr/libexec/java_home:$JAVA_HOME"
-
 # this prints the current date at zsh launch
-date
+#date
 
 # loading autocompletion
 autoload -U compinit
@@ -34,6 +30,13 @@ setopt NO_BEEP
 # automatically decide when to page a list of completions
 LISTMAX=10
 
+# enable auto cd prefix
+setopt AUTO_CD
+
+# enable autocorrection while typing commands
+setopt CORRECT
+setopt CORRECT_ALL
+
 # I am not sure I want this since typically I replace
 # the BSD with GNU so it should load colors by default
 # I leave this here for future reference as it helps avoiding
@@ -42,9 +45,10 @@ LISTMAX=10
 #autoload -U colors
 #colors
 
-# This redefines the standard default zsh prompt to resemble 
+# This redefines the standard default zsh prompt to mimic 
 # the one I had when I was a young astrophysicist
-PROMPT='%B[%n@%m]%b %1d $(git_super_status)> '
+#PROMPT='%B[%n@%m]%b %1d $(git_super_status)> '
+PROMPT='%B[%m]%b %2d $(git_super_status) > '
 
 ##############################################################
 ##############################################################
@@ -69,6 +73,10 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # this is for miniconda
+# I just don't use this as much...
+# defining JAVA_HOME
+export JAVA_HOME="/usr/libexec/java_home:$JAVA_HOME"
+
 #export PATH="/Users/grossetti/miniconda3/bin:$PATH"
 #export PATH="/usr/local/opt/python3/bin/python3:$PATH"
 #export PATH="/usr/local/Cellar/python@3.8/3.8.3/bin/python3:$PATH"
@@ -137,7 +145,7 @@ alias ls='ls --color=auto'
 alias lls='ls -lhS'
 alias ll='ls -lh'
 alias llrt='ls -lhrt'
-alias llart='ls -lahrt'
+alias llrta='ls -lahrt'
 alias la='ls -a'
 alias lla='ls -la'
 alias lrt='ls -rt'
@@ -177,15 +185,6 @@ alias notebook='python3 -m notebook'
 alias skim='open /Applications/Skim.app'
 
 # SSH aliases
-alias parker='ssh -CY franz@parker.mib.infn.it'
-alias violeta='ssh -CY franz@192.168.0.4'
-alias tosca='ssh -CY grossetti@10.48.136.25'
-#alias tosca='ssh -Y grossetti@10.48.139.77'
-alias tosca_ext='ssh -CY grossetti@tosca.mate.polimi.it'
-alias mox41='ssh -CY grossetti@10.48.139.91'
-alias dott2='ssh -CY grossetti@10.48.139.96'
-alias dott6='ssh -CY grossetti@10.48.139.101'
-alias gtel='ssh e3fgross@10.180.228.83'
 alias bidsa='ssh -CY grossetti@bidsa-sc.sm.unibocconi.it'
 alias dsba='ssh -CY grossetti@dsba.sm.unibocconi.it'
 alias gucci1='ssh -CY grossetti@guccilab01.sm.unibocconi.it'
