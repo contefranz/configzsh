@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 OH_MY_ZSH_DIR=~/.oh-my-zsh
-
+ZSH_CUSTOM=$OH_MY_ZSH_DIR/custom
 repo_git_zsh=~/Dropbox/Software/zsh-git-prompt
 init_config_dir=~/Dropbox/Software/configzsh # init directory
 
@@ -12,7 +12,9 @@ else
     echo "oh-my-zsh is already installed" 
 fi
 
+echo "---"
 echo "linking user configuration files in $ZSH_CUSTOM"
+echo "---"
 
 ln -sv $init_config_dir/aliases.zsh $ZSH_CUSTOM
 ln -sv $init_config_dir/custom_paths.zsh $ZSH_CUSTOM
