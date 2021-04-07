@@ -25,6 +25,7 @@ alias x-='chmod o-x'
 alias stampa='lpr -o sides=two-sided-long-edge -P _10_48_136_10'
 alias stampanti='lpstat -p -d'
 alias zshconfig='vim ~/.zshrc'
+alias zshaliases='vim $ZSH_CUSTOM/aliases.zsh'
 alias p10kconfig='vim ~/.p10k.zsh'
 
 # path aliases
