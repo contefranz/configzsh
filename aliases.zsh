@@ -27,6 +27,7 @@ alias stampanti='lpstat -p -d'
 alias zshconfig='vim ~/.zshrc'
 alias zshaliases='vim $ZSH_CUSTOM/aliases.zsh'
 alias p10kconfig='vim ~/.p10k.zsh'
+alias vimconfig='vim ~/.vimrc'
 
 # path aliases
 alias cellar='cd /usr/local/Cellar'

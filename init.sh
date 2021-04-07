@@ -19,7 +19,7 @@ echo "---"
 ln -sv $init_config_dir/aliases.zsh $ZSH_CUSTOM
 ln -sv $init_config_dir/custom_paths.zsh $ZSH_CUSTOM
 ln -sv $init_config_dir/miscellanea.zsh $ZSH_CUSTOM
-
+ln -sv ./vimrc ~/.vimrc
 # set up zsh + git
 #ln -sv $init_config_dir/gitconfig ~/.gitconfig
 #ln -sv $init_config_dir/zshrc ~/.zshrc   # for non-interactive shells
