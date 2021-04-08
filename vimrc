@@ -1,7 +1,6 @@
 " A nice vimrc config file
- 
+
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " sintax highlighting
 syntax on
@@ -31,7 +30,11 @@ Plug 'tomlion/vim-solidity'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 Plug 'itchyny/lightline.vim'
-
+Plug 'ntpeters/vim-better-whitespace'     " trailing whitespaces management. Defines the command :StripWhitespace
+Plug 'matze/vim-move'                     " move lines up and down with alt-k / alt-j
+Plug 'vim-latex/vim-latex'                " vim-latex suite
+Plug 'tpope/vim-surround'                 " surround text objects with parentheses
+"Plug 'bling/vim-airline'                  " lower and upper bar
 " --------
 " Below are the original suggestions from vim-plug tutorial
 " --------
@@ -67,19 +70,37 @@ call plug#end()
 " END OF  VIM-PLUG LIST OF PLUGINS
 " -----------------------------------------------
 
+" ------------------------
+" SET GLOBAL OPTIONS
+" ------------------------
+set autoindent
 filetype plugin indent on    " required
+set copyindent
+set preserveindent
 syntax on
 
 set backspace=indent,eol,start
+" set tab completion behviour
+set wildmode=longest,list,full " first tab: longest common completion, second tab: list, third and subsequents: cycle
+set wildmenu
 
 colorscheme gruvbox
 set background=dark
+
+set cursorline
+
+" Make vsplit put the new buffer on the right of the current buffer by default
+set splitright
+
+" set path for autocompletion from included file
+set path+=~/include/
 
 " to show line numbers
 set number
 "set relativenumber
 set ruler
 set hlsearch
+set incsearch
 set backspace=indent,eol,start
 set tabstop=4
 set softtabstop=4
