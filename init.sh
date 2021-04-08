@@ -1,31 +1,53 @@
-#!/bin/zsh
+#!/bin/zsh 
 
-OH_MY_ZSH_DIR=~/.oh-my-zsh
-ZSH_CUSTOM=$OH_MY_ZSH_DIR/custom
-repo_git_zsh=~/Dropbox/Software/zsh-git-prompt
-init_config_dir=~/Dropbox/Software/configzsh # init directory
+THEHOME=~/ 
+OH_MY_ZSH_DIR=~/.oh-my-zsh 
+ZSH_CUSTOM=$OH_MY_ZSH_DIR/custom 
+repo_git_zsh=~/Dropbox/Software/zsh-git-prompt 
+init_config_dir=~/Dropbox/Software/configzsh 
 
-if [ ! -d $OH_MY_ZSH_DIR ]; then
+
+echo "---"
+echo "INSTALLING OH-MY-ZSH"
+echo "---"
+
+if [ ! -d $OH_MY_ZSH_DIR ]; then 
     echo "There is no oh-my-zsh directory. Installing...";
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+else 
     echo "oh-my-zsh is already installed" 
+fi 
+
+echo "---" 
+echo "SETTING CONFIG FILES FOR OH-MY-ZSH IN $ZSH_CUSTOM" 
+echo "adding aliases - custom paths - miscellanea"
+echo "---" 
+
+ln -sv $init_config_dir/aliases.zsh $ZSH_CUSTOM 
+ln -sv $init_config_dir/custom_paths.zsh $ZSH_CUSTOM 
+ln -sv $init_config_dir/miscellanea.zsh $ZSH_CUSTOM
+
+echo "---"
+echo "ADDING VIM CONFIG FILES IN $THEHOME"
+echo "---"
+
+if [ ! -f ~/.vimrc ]; then
+    echo "adding .vimrc in ~/";
+    ln -sv $init_config_dir/vimrc $THEHOME/.vimrc
+else
+    echo "replacing current .vimrc";
+    rm $THEHOME/.vimrc
+    ln -sv $init_config_dir/vimrc $THEHOME/.vimrc
 fi
 
 echo "---"
-echo "linking user configuration files in $ZSH_CUSTOM"
+echo "MAKING THE TERMINAL SILENT WHEN IT OPENS"
 echo "---"
 
-ln -sv $init_config_dir/aliases.zsh $ZSH_CUSTOM
-ln -sv $init_config_dir/custom_paths.zsh $ZSH_CUSTOM
-ln -sv $init_config_dir/miscellanea.zsh $ZSH_CUSTOM
-ln -sv ./vimrc ~/.vimrc
-# set up zsh + git
-#ln -sv $init_config_dir/gitconfig ~/.gitconfig
-#ln -sv $init_config_dir/zshrc ~/.zshrc   # for non-interactive shells
+if [ ! -f ~/.hushlogin ]; then
+    echo "shhhh initial terminal message";
+    touch $THEHOME/.hushlogin 
+else
+    echo "terminal already silent";
+fi
 
-# set up vim
-#ln -sv $init_config_dir/vim ~/.vim
-#ln -sv $init_config_dir/vimrc ~/.vimrc
-#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#vim +PluginInstall +qall
