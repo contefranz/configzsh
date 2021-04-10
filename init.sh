@@ -3,8 +3,7 @@
 THEHOME=~/
 OH_MY_ZSH_DIR=~/.oh-my-zsh
 ZSH_CUSTOM=$OH_MY_ZSH_DIR/custom
-repo_git_zsh=~/Dropbox/Software/zsh-git-prompt
-init_config_dir=~/Dropbox/Software/configzsh
+init_config_dir=$PWD
 
 echo "---"
 echo "INSTALLING OH-MY-ZSH"
@@ -43,11 +42,11 @@ echo "---"
 
 if [ ! -f ~/.vimrc ]; then
     echo "adding .vimrc in ~/";
-    ln -sv $init_config_dir/vimrc $THEHOME/.vimrc
+    ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 else
     echo "replacing current .vimrc";
     rm $THEHOME/.vimrc
-    ln -sv $init_config_dir/vimrc $THEHOME/.vimrc
+    ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 fi
 
 echo "---"
