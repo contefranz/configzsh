@@ -1,7 +1,15 @@
-This is a very simple repo to gather that boring set of instructions to automatically 
-define a nice `zsh` and `vim` environment.
+# What's this?
 
-There is nothing fancy...just launch the initialization script with `./init.sh`...
+This repository contains the script `init.sh` to automatized the creation of
+customized `.dotfiles` for the following environments: 
+
+1. `zsh` with `oh-my-zsh`.
+2. `powerlevel10k` theme for `oh-my-zsh`.
+3. `vim` with a set of plugins and nice settings.
+3. `.gitconfig` global file. 
+
+
+There is nothing fancy here...just launch the initialization script with `./init.sh`...
 
 ### MacOS Requirements
 
@@ -19,17 +27,24 @@ In order to use `init.sh` you need to have the following requirements satisfied:
 
 ### A Fresh Start
 
-* `init.sh` does its best at checking you don't already have prior installation
-  of `oh-my-zsh` and `powerlevel10k`. If you want to be sure to start from
-  scratch the configuration, just run the following:
+* `init.sh` does its best at checking you don't already have prior installations
+  of `oh-my-zsh` and `powerlevel10k`. If you want to be sure to start the
+  configuration from scratch, just run the following:
 
   ```
   rm ~/.oh-my-zsh
   rm ~/.zshrc
-  rm ~./p10k.zsh
+  rm ~/.p10k.zsh
   ```
 
-* `init.\   
+* `init.sh` also installs a customized version of `vim` with additional plugin
+  via `vim-plug` and a modified `.vimrc`. The script is bothered if it finds
+  that files are already there. Clean everything by running: 
+
+  ```
+  rm ~/.vimrc
+  rm -rf ~/.vim
+  ```
 
 ### Issues with oh-my-zsh
 
