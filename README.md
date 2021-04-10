@@ -8,6 +8,13 @@ customized `.dotfiles` under MacOS for the following environments:
 3. `vim` with a set of plugins and nice settings.
 3. `.gitconfig` global file. 
 
+In order for `init.sh` to work properly, make sure you execute it from the
+repository folder. To execute the script just type:
+
+```
+./init.sh
+```
+
 ### MacOS Requirements
 
 In order to use `init.sh` you need to have the following requirements satisfied:
