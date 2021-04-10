@@ -1,15 +1,12 @@
 # What's this?
 
-This repository contains the script `init.sh` to automatized the creation of
-customized `.dotfiles` for the following environments: 
+This repository contains a script to automatized the creation of
+customized `.dotfiles` under MacOS for the following environments: 
 
 1. `zsh` with `oh-my-zsh`.
 2. `powerlevel10k` theme for `oh-my-zsh`.
 3. `vim` with a set of plugins and nice settings.
 3. `.gitconfig` global file. 
-
-
-There is nothing fancy here...just launch the initialization script with `./init.sh`...
 
 ### MacOS Requirements
 
@@ -46,6 +43,13 @@ In order to use `init.sh` you need to have the following requirements satisfied:
   rm -rf ~/.vim
   ```
 
+* Make sure to remove any prior `git` configuration file in your home directory
+  as follows: 
+
+  ```
+  rm ~/.gitconfig
+  ```
+
 ### Issues with oh-my-zsh
 
 In some cases, `oh-my-zsh` finds issues related to two specific folders which
@@ -63,3 +67,26 @@ I personally found the following workaround to solve my issue.
 chmod 755 /usr/local/share/zsh
 chmod 755 /usr/local/share/zsh/site-functions
 ```
+
+### Enabling Plugins and Themes in `zsh`
+
+`init.sh` prepares everything for you but it does not physically change the
+default configuration file for you with the expection for `vim`. This means that
+if you want `zsh-autosuggestions`  you will have to install them. The same
+applies to `powerlevel10k`. You need to explicitly set it in the new `~/.zshrc`
+that `init.sh` just prepared for you. 
+
+Some `zsh` plugins that come in handy are:
+
+* `zsh-autosuggestions`: click [here](https://github.com/zsh-users/zsh-autosuggestions) to visit the repository.
+
+* `zsh-syntax-highlighting`: click [here](https://github.com/zsh-users/zsh-syntax-highlighting) to visit the repository. 
+
+To enabling `powerlevel10k`, please follow the guidelines provided by
+`oh-my-zsh` and change the variable `ZSH_THEME` in `~/.zshrc` accordingly. For a
+default installation, use `"powerlevel10k/powerlevel10K"`. 
+
+You can read more about this theme
+[here](https://github.com/romkatv/powerlevel10k#powerlevel10k). 
+
+
