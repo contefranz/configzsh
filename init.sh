@@ -41,15 +41,26 @@ echo "ADDING VIM CONFIG FILES IN $THEHOME"
 echo "---"
 
 if [ ! -f ~/.vimrc ]; then
-    echo "adding .vimrc in ~/";
+    echo "adding .vimrc in $THEHOME";
     ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 else
     echo "replacing current .vimrc";
-    rm $THEHOME/.vimrc
+    rm $THEHOME.vimrc
     ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 fi
 
 echo "---"
+echo "ADDING GIT CONFIG FILE IN $THEHOME"
+echo "---"
+
+if [ ! -f ~/.gitconfig ]; then
+    echo "adding .gitconfig in $THEHOME";
+    ln -sv $init_config_dir/vimrc $THEHOME.vimrc
+else
+    echo "replacing current .gitconfig"
+    rm $THEHOME.gitconfig
+    ln -sv $init_config_dir/gitconfig $THEHOME.gitconfig
+
 echo "MAKING THE TERMINAL SILENT WHEN IT OPENS"
 echo "---"
 
