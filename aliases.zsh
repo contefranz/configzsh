@@ -38,7 +38,7 @@ alias drive='cd ~/Google\ Drive'
 alias dropbox='cd ~/Dropbox'
 alias onedrive='cd ~/OneDrive\ -\ Università\ Commerciale\ Luigi\ Bocconi'
 alias bocconi='cd ~/Dropbox/Bocconi'
-alias papers='cd ~/Dropox/Bocconi/Papers'
+alias papers='cd ~/Dropbox/Bocconi/Papers'
 
 # applications aliases
 alias pycharm='open /Applications/PyCharm\ CE.app'

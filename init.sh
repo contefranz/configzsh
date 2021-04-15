@@ -45,7 +45,7 @@ if [ ! -f ~/.vimrc ]; then
     ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 else
     echo "replacing current .vimrc";
-    rm $THEHOME.vimrc
+    mv $THEHOME.vimrc $THEHOME.vimrc.configzsh.bck
     ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 fi
 
@@ -58,9 +58,22 @@ if [ ! -f ~/.gitconfig ]; then
     ln -sv $init_config_dir/vimrc $THEHOME.vimrc
 else
     echo "replacing current .gitconfig"
-    rm $THEHOME.gitconfig
+    mv $THEHOME.gitconfig $THEHOME.gitconfig.configzsh.bck
     ln -sv $init_config_dir/gitconfig $THEHOME.gitconfig
 
+echo "---"
+echo "ADDING R-MAKEVARS FILE IN $THEHOME"
+echo "---"
+
+if [ ! -f ~/.R/Makevars]; then
+    echo "adding ~/.R/Makevars in $THEHOME";
+    ln -sv $init_config_dir/Makevars $THEHOME.R/Makevars
+else
+    echo "replacing current ~/.R/Makevars"
+    mv $THEHOME.R/Makevars $THEHOME.R/Makevars.configzsh.bck
+    ln -sv $init_config_dir/Makevars $THEHOME.R/Makevars
+
+echo "---"
 echo "MAKING THE TERMINAL SILENT WHEN IT OPENS"
 echo "---"
 
