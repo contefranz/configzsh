@@ -34,7 +34,7 @@ Plug 'ntpeters/vim-better-whitespace'     " trailing whitespaces management. Def
 Plug 'matze/vim-move'                     " move lines up and down with alt-k / alt-j
 Plug 'vim-latex/vim-latex'                " vim-latex suite
 Plug 'tpope/vim-surround'                 " surround text objects with parentheses
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/markdown-preview.vim'
 "Plug 'bling/vim-airline'                  " lower and upper bar
 " --------
 " Below are the original suggestions from vim-plug tutorial
