@@ -28,6 +28,7 @@ alias zshconfig='vim ~/.zshrc'
 alias zshaliases='vim $ZSH_CUSTOM/aliases.zsh'
 alias p10kconfig='vim ~/.p10k.zsh'
 alias vimconfig='vim ~/.vimrc'
+alias tensordboard='python3 -m tensorboard.main' 
 
 # path aliases
 alias cellar='cd /usr/local/Cellar'
