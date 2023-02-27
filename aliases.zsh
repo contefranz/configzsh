@@ -48,7 +48,7 @@ alias notebook='python3 -m notebook'
 alias skim='open /Applications/Skim.app'
 
 # SSH aliases
-alias bidsa='ssh -CY grossetti@bidsa-sc.sm.unibocconi.it'
+alias bidsa='ssh -CY -i /Users/grossetti/.ssh/grossetti_bidsa grossetti@earth.sm.unibocconi.it'
 alias dsba='ssh -CY grossetti@dsba.sm.unibocconi.it'
 alias gucci1='ssh -CY grossetti@guccilab01.sm.unibocconi.it'
 alias gucci2='ssh -CY grossetti@guccilab02.sm.unibocconi.it'
